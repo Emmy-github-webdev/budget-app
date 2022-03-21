@@ -10,8 +10,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/tmp/cache/assets
 !/log/.keep
 !/tmp/.keep
+/tm/cache/assets
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
