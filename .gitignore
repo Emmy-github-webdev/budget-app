@@ -10,10 +10,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-/tmp/cache/assets
 !/log/.keep
 !/tmp/.keep
-/tm/cache/assets
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -32,3 +30,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 node_modules/
+
+/tm/cache/assets

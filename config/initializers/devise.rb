@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'cf1fea10606984fdf6ae244a8c74d05c0a5b8870a29df5718bc7cce83ba6ff33db5ba6433e4b754b42f91f777b3c31c9b40f20db81b6bcb47fabbf2146c8d248'
+  # config.secret_key = '28a909aadf66dd68dc5d4475ebe8af63029c29a1d08a9070c5a8bb619181502a3ad887d5357acce7c1985f348541f30d4dc0bfce267c51ee72e66b6d90ce69ba'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '8867b2afb907623c4342a9d6b66a0cff8645961ef4428029c8cde273d5654bcfd71480d4da3e4b161d0922d6877f82bc352f9a0f1a5525428a47cfbbc74bc2bc'
+  # config.pepper = 'a708cebcebd91e5e46b44280e21b5a20284d9b7cd0f48a09db0c7bc44f3d1a2fa23442e92a64e7a19f1907e3864ca9a5596f804580dbfdc5f49ac9d4b1f57d9f'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -143,7 +143,7 @@ Devise.setup do |config|
   # without confirming their account.
   # Default is 0.days, meaning the user cannot access the website without
   # confirming their account.
-  config.allow_unconfirmed_access_for = 365.days
+  # config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
