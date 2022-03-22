@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-page">
+  <div class="home-content">
+    <div class="home-header">
+      <h1>Snapscan</h1>
+    </div>
+    <div class="home-authentication">
+      <div class="home-login">
+        <%= link_to 'LOG IN', new_user_session_path%>
+      </div>
+      <div class="home-register">
+       <%= link_to 'SIGN UP', new_user_registration_path%>
+      </div>
+    </div>
+  </div>
+</div>
