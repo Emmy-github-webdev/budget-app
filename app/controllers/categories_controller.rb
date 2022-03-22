@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
     )
     respond_to do |format|
       if @categories.save
-        format.html { redirect_to  user_categories_path, notice: 'Category was created successfully' }
+        format.html { redirect_to  user_categories_path, notice: 'Category created successfully' }
         format.json { render :show, status: :created, location: @categories }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -20,7 +20,14 @@ class CategoriesController < ApplicationController
     end
   end
   
-  
+  def destroy
+    @categories.delete
+    respond_to do |format|
+      format.html { redirect_to  user_categories_path, notice: 'Category deleted successfully' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def set_category
