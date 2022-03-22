@@ -1,4 +1,4 @@
 class ActivitiesCategory < ApplicationRecord
-  belongs_to :activities
-  belongs_to :categories
+  belongs_to :activities, dependent: :destroy
+  belongs_to :categories, dependent: :destroy
 end
