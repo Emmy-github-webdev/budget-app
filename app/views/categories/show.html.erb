@@ -1,4 +1,27 @@
-<div>
-<h2><%= @category.name %></h2>
-<em> <%= image_tag @category.icon %><em>  
+<div class="category-show">
+  <div class="show-header">
+    <%= link_to 'Back To Categories', categories_path%>
+    <h1>Transactions</h1>
+  </div>
+  <div class="show-gift">
+    <div class="gift-content">
+      <p>Gift credit: </p>
+      <p>$<%= @category.total_amount %></p>
+    </div>
+    <hr>
+  </div>_activity_amount.html
+  <div class="show-content">
+   <% if @activities.empty? %>
+     <div class="no-show-content">
+        No Transactions found
+      </div>
+    <% else %>_activity_amount.html
+      <% @activities.each do |activity| %>
+        <%= render partial: 'activities/activity_amount', { activity: activity } %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+<div class="show-add-transaction">
+  <%= link_to 'Add A Transaction', new_activity_path%>
+</div>_activity_amount.html

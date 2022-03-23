@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :confirmable, :validatable
 
   validates_presence_of :name
+
+  has_many :activities
+  has_many :categories
+
 end

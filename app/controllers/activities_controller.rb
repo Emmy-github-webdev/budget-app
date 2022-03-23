@@ -10,10 +10,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(activity_params, user_id: current_user.id)
+    @activity = Activity.new(activity_params)
+    @activity.user_id = current_user
 
     if @activity.save
-      flash[:notice] = 'Activity created successfully' 
+      flash[:ncategories.otice] = 'Activity created successfully' 
     else
       flash[:notice] = 'Try again, Something went wrong' 
     end
@@ -27,6 +28,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :amount, categories: [])
+    params.require(:activity).permit(:name, :amount, category_ids: [])
   end
 end

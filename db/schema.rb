@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_21_233211) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_23_162954) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,13 +23,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_233211) do
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
-  create_table "activities_categories", force: :cascade do |t|
-    t.bigint "activities_id", null: false
-    t.bigint "categories_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["activities_id"], name: "index_activities_categories_on_activities_id"
-    t.index ["categories_id"], name: "index_activities_categories_on_categories_id"
+  create_table "activities_categories", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "activity_id", null: false
+    t.index ["activity_id", "category_id"], name: "index_activities_categories_on_activity_id_and_category_id"
+    t.index ["category_id", "activity_id"], name: "index_activities_categories_on_category_id_and_activity_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -59,7 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_21_233211) do
   end
 
   add_foreign_key "activities", "users"
-  add_foreign_key "activities_categories", "activities", column: "activities_id"
-  add_foreign_key "activities_categories", "categories", column: "categories_id"
   add_foreign_key "categories", "users"
 end
