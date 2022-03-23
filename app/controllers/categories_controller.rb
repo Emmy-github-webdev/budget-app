@@ -1,10 +1,13 @@
 class CategoriesController < ApplicationController
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.all.where(user_id: current_user.id)
   end
 
-  def show; end
+  def show
+    @activities = @category.activities.order(created_at: 'desc')
+  end
 
   def new
     @category = Category.new
@@ -31,12 +34,11 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.includes(:activities).find(params[:id])
   end
 
   def category_params
     params.require(:category).permit(:name, :icon)
   end
-  
   
 end
