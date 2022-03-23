@@ -9,19 +9,19 @@
       <p>$<%= @category.total_amount %></p>
     </div>
     <hr>
-  </div>_activity_amount.html
+  </div>
   <div class="show-content">
    <% if @activities.empty? %>
      <div class="no-show-content">
         No Transactions found
       </div>
-    <% else %>_activity_amount.html
+    <% else %>
       <% @activities.each do |activity| %>
-        <%= render partial: 'activities/activity_amount', { activity: activity } %>
+        <%= render partial: 'activities/activity_amount', locals: { activity: activity } %>
       <% end %>
     <% end %>
   </div>
 </div>
 <div class="show-add-transaction">
   <%= link_to 'Add A Transaction', new_activity_path%>
-</div>_activity_amount.html
+</div>

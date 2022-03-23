@@ -1,19 +1,21 @@
 <div>
-  <div>
-    <div class="category-image">
-      <%= image_tag category.icon %>
+  <%= link_to category_url(category) do %>
+    <div>
+      <div class="category-image">
+        <%= image_tag category.icon %>
+      </div>
+      <div class="category-middle">
+        <h3><%= category.name %></h3>
+        <br>
+        <small>
+          <%= category.created_at.strftime("%d %h %Y")%>
+        </small>
+      </div>
+      <div class="Category-right">
+        <small>
+        $<%= category.total_amount%>
+        </small>
+      </div>
     </div>
-    <div class="category-middle">
-      <h3><%= category.name %></h3>
-      <br>
-      <small>
-        <%= category.created_at.strftime("%d %h %Y")%>
-      </small>
-    </div>
-    <div class="Category-right">
-      <small>
-      $<%= category.total_amount%>
-      </small>
-    </div>
-  </div>
+  <% end %>
 </div>
