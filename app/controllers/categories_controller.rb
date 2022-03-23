@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
 
   def index
@@ -13,7 +14,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def create
+  def crerequire_loginate
     @category = Category.new(user_id: current_user.id, name: category_params[:name], icon: category_params[:icon])
     if @category.save
       flash[:notice] = 'Category created successfully' 
@@ -21,7 +22,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = 'Try again, Something went wrong' 
     end
     redirect_to categories_path
-  end
+  endrequire_login
   
   def destroy
     @category.delete
@@ -31,10 +32,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  private
-
-  def set_category
-    @category = Category.includes(:activities).find(params[:id])
+  privatrequire_loginegory = Category.includes(:activities).find(params[:id])
   end
 
   def category_params
