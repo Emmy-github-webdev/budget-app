@@ -1,9 +1,15 @@
 <div class="category-page">
   <div class="category-content">
     <h1>Category</h1>
-     <% @categories.each do |category| %>
-    <%= category.name %>
-    <%= image_tag category.icon %>
-    <% end %>
+     <% if @categories.empty? %>
+      <div class="no-category"> Category is empty</div>
+      <% else %>
+       <% @categories.each do |category|%>
+        <%= render partial: 'category', locals: { category: category } %>
+       <% end %>
+     <% end %>
+  </div>
+  <div class="add-category">
+    <%= link_to 'Add New Category', new_category_path %>
   </div>
 </div>

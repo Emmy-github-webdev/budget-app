@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
 
   def index
-    @activities = Acticity.all.where(user_id: current_user.id)
+    @activities = Activity.all.where(user_id: current_user.id)
   end
 
   def new
@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params, user_id: current_user.id)
-    
+
     if @activity.save
       flash[:notice] = 'Activity created successfully' 
     else

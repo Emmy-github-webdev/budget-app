@@ -1,0 +1,16 @@
+<div class="activity-form">
+  <%= form_with(model: activity) do |form| %>
+    <div class="field">
+      <%= form.text_field :name,  placeholder: "Name"%>
+    </div>
+    <div class="field">
+      <%= form.text_field :amout,  placeholder: "Amount"%>
+    </div>
+    <div class="field">
+      <%= form.collection_select :categories, current_user.categories.order(:name), :id, :name, {} %>
+    </div>
+    <div>
+      <%= form.submit 'Add New Transaction', class: "submit-btn btn" %>
+    </div>
+  <% end %>
+</div>
