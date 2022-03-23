@@ -1,0 +1,9 @@
+<div class="new-category-page">
+  <h1>New Category </h1>
+  <%= render "form", category: @category %>
+  <br>
+
+  <div>
+    <%= link_to "Back to foods", categories_path, class: "link-btn" %>
+  </div>
+</div>

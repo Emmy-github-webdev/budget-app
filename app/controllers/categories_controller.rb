@@ -1,29 +1,29 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.find_by(user_id: current_user.id)
+    @categories = Category.all.where(user_id: current_user.id)
+  end
+
+  def show; end
+
+  def new
+    @category = Category.new
   end
 
   def create
-    @categories = current_user.categories.create!(
-      name: params[:category][:name],
-      icon: params[:category][:icon]
-    )
-    respond_to do |format|
-      if @categories.save
-        format.html { redirect_to  user_categories_path, notice: 'Category created successfully' }
-        format.json { render :show, status: :created, location: @categories }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @categories.errors, status: :unprocessable_entity }
-      end
+    @category = Category.new(user_id: current_user.id, name: category_params[:name], icon: category_params[:icon])
+    if @category.save
+      flash[:notice] = 'Category created successfully' 
+    else
+      flash[:notice] = 'Try again, Something went wrong' 
     end
+    redirect_to categories_path
   end
   
   def destroy
-    @categories.delete
+    @category.delete
     respond_to do |format|
-      format.html { redirect_to  user_categories_path, notice: 'Category deleted successfully' }
+      format.html { redirect_to category_path, notice: 'Category deleted successfully' }
       format.json { head :no_content }
     end
   end
@@ -31,11 +31,11 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @categories = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def category_params
-    params.permit(:name, :icon)
+    params.require(:category).permit(:name, :icon)
   end
   
   
