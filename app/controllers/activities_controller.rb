@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_activity, only: %i[show edit update destroy]
+  before_action :set_activity, only: %i[show]
 
   def index
     @activities = Activity.all.where(user_id: current_user.id)

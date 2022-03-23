@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def crerequire_loginate
+  def create
     @category = Category.new(user_id: current_user.id, name: category_params[:name], icon: category_params[:icon])
     if @category.save
       flash[:notice] = 'Category created successfully' 
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = 'Try again, Something went wrong' 
     end
     redirect_to categories_path
-  endrequire_login
+  end
   
   def destroy
     @category.delete
@@ -32,7 +32,10 @@ class CategoriesController < ApplicationController
     end
   end
 
-  privatrequire_loginegory = Category.includes(:activities).find(params[:id])
+  private
+
+  def set_category
+    @category = Category.includes(:activities).find(params[:id])
   end
 
   def category_params
