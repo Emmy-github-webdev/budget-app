@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :activity do
-    user_id {} 
+    user_id {} # This references user
     sequence(:name) { |n| "Activity #{n}" }
-    amount { 10 }
+    amount { 20 }
 
     factory :activity_with_categories do
       transient do

@@ -18,10 +18,10 @@ class ActivitiesController < ApplicationController
       category_ids: activity_params[:category_ids]
     )
 
-    if @activity.save
-      flash[:ncategories.otice] = 'Activity created successfully'
+    flash[:notice] = if @activity.save
+      'Category created successfully'
     else
-      flash[:notice] = 'Try again, Something went wrong'
+      'Try again, Something went wrong'
     end
     redirect_to categories_path
   end
