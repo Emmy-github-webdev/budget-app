@@ -72,3 +72,6 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers', '~> 5.0'
 end
+
+gem 'cancancan'
+gem 'capybara'
