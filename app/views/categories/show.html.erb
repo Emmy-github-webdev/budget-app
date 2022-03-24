@@ -7,6 +7,8 @@
      <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete} %>
   </div>
 </header>
+ <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 <div class="show-gift">
     <div class="gift-content">
       <p>Gift credit: </p>

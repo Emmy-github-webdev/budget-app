@@ -14,6 +14,10 @@
  .home-page,
  .new-category-page,
  .category-show,
+ .user-login,
+ .user-signup,
+ .forgot-password,
+ .resend-confirm-email,
  .category-page {
   max-width: 1200px;
   width: 80%;
