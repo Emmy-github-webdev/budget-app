@@ -7,5 +7,4 @@ class Category < ApplicationRecord
   def total_amount
     activities.sum(:amount)
   end
-  
 end

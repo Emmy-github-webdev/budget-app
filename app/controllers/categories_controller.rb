@@ -16,14 +16,14 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(user_id: current_user.id, name: category_params[:name], icon: category_params[:icon])
-    if @category.save
-      flash[:notice] = 'Category created successfully' 
-    else
-      flash[:notice] = 'Try again, Something went wrong' 
-    end
+    flash[:notice] = if @category.save
+                       'Category created successfully'
+                     else
+                       'Try again, Something went wrong'
+                     end
     redirect_to categories_path
   end
-  
+
   def destroy
     @category.delete
     respond_to do |format|
@@ -41,5 +41,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name, :icon)
   end
-  
 end
