@@ -11,8 +11,12 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(activity_params)
-    @activity.user_id = current_user
+    @activity = Activity.new(
+      user_id: current_user.id, 
+      name: activity_params[:name], 
+      amount: activity_params[:amount],
+      category_ids: activity_params[:category_ids]
+    )
 
     if @activity.save
       flash[:ncategories.otice] = 'Activity created successfully' 

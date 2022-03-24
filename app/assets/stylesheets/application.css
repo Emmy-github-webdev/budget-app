@@ -12,6 +12,8 @@
  }
 
  .home-page,
+ .new-category-page,
+ .category-show,
  .category-page {
   max-width: 1200px;
   width: 80%;
@@ -91,6 +93,12 @@
   margin-bottom: 1rem;
 }
 
+.category-show {
+  box-shadow: 20px 20px 50px grey;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
 .category-image {
   height: 98%;
   width: 80%;
@@ -104,15 +112,51 @@
 .Category-right {
   color: #000;
 }
-.add-category {
+.add-category,
+.show-add-transaction {
  background-color: #60b524;
  margin-bottom: 0;
  text-align: center;
  padding: 20px 10px;
 }
 
-.add-category a {
+.add-category a,
+.show-add-transaction a {
   text-decoration: none;
   color: #fff;
 }
 
+.nav-link a {
+ text-decoration: none;
+ color: #fff;
+}
+
+.show-gift {
+  background-color: #fff;
+}
+
+.gift-content {
+ display: flex;
+ margin: 1rem;
+ justify-content: space-around;
+}
+
+.show-item {
+  margin: 1rem;
+}
+
+.category-input,
+.submit-btn {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+}

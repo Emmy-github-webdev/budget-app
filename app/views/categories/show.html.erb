@@ -1,27 +1,35 @@
-<div class="category-show">
-  <div class="show-header">
-    <%= link_to 'Back To Categories', categories_path%>
-    <h1>Transactions</h1>
+<header class="navigation">
+  <div class="nav-link">
+  <%= link_to '<', categories_path %>
   </div>
-  <div class="show-gift">
+  <h1>Transactions</h1>
+  <div class="logout">
+     <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete} %>
+  </div>
+</header>
+<div class="show-gift">
     <div class="gift-content">
       <p>Gift credit: </p>
       <p>$<%= @category.total_amount %></p>
     </div>
     <hr>
   </div>
+<div class="category-show">
   <div class="show-content">
    <% if @activities.empty? %>
      <div class="no-show-content">
         No Transactions found
       </div>
     <% else %>
+     <div class="show-item">
       <% @activities.each do |activity| %>
         <%= render partial: 'activities/activity_amount', locals: { activity: activity } %>
       <% end %>
+      </div>
     <% end %>
   </div>
 </div>
+
 <div class="show-add-transaction">
   <%= link_to 'Add A Transaction', new_activity_path%>
 </div>
