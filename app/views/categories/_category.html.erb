@@ -1,11 +1,11 @@
-<div>
+<div >
   <%= link_to category_url(category) do %>
-    <div>
-      <div class="category-image">
-        <%= image_tag category.icon %>
+    <div class="category-item">
+      <div class="category-img">
+        <%= image_tag category.icon, class: 'category-image' %>
       </div>
       <div class="category-middle">
-        <h3><%= category.name %></h3>
+        <h3> <%= category.name %> </h3>
         <br>
         <small>
           <%= category.created_at.strftime("%d %h %Y")%>
