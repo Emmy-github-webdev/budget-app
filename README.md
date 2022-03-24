@@ -1,73 +1,129 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
 
-> Description the project.
+# Budget App 
 
+[Live Demo]()
+[Video]()
+
+> In this project we have build a Recipe App using Ruby on Rails.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby on Rails
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- Git - Github - GitFlow
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
+To get a local copy up and running follow these simple steps.
 
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+
+- Visual Studio Code or Sublime Text
+
+- Git
+
+- LiveServer Extension
+
+
 ### Setup
+
+
+Go to the top of the page, press te green button that says "Code", and copy the link. Then you have to go to your console and type " git clone 'repository-url.com' ".
+
+
+- Next step: Go to usage section!
+
+
 
 ### Install
 
+
+No extra dependencies needed to use the code!
+
+
+### Test
+
+
+- Ruby Linters 
+
+
+```
+
+rubocop
+
+```
+
+
+- Css Linters
+
+
+```
+
+npx stylelint "**/*.{css,scss}"
+
+```
+
+- Rspec Test Tool
+
+``` 
+
+rspec spec/
+
+```
+
+
 ### Usage
 
-### Run tests
 
-### Deployment
+- Once you clone the repository:
 
+
+
+```
+
+cd repository-clone
+
+bundle install
+
+rails db:create
+
+rails db:migrate
+
+rails s
+
+```
+
+
+You are ready to go!
 
 
 ## Authors
 
-👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Emmanuel Ogah**
 
-👤 **Author2**
+- GitHub: [@Emmy-github-webdev](https://github.com/Emmy-github-webdev)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- LinkedIn: [@emmanuelogaho](https://www.linkedin.com/in/emmanuelogaho)
+
 
 ## 🤝 Contributing
 
+
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+
+Give a ⭐️ if you like this project! 😄
+
 
 ## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
+Original design by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)

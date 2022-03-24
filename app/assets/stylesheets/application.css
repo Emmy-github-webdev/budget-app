@@ -3,28 +3,29 @@
  *= require_self
  */
 
- /* Home Page Style*/
- body{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   background-color: #f1f3f2;
- }
+/* Home Page Style */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f3f2;
+}
 
- .home-page,
- .new-category-page,
- .category-show,
- .user-login,
- .user-signup,
- .forgot-password,
- .resend-confirm-email,
- .category-page {
+.home-page,
+.new-category-page,
+.category-show,
+.user-login,
+.user-signup,
+.forgot-password,
+.resend-confirm-email,
+.category-page {
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
   padding: 20px;
- }
- .home-page {
+}
+
+.home-page {
   max-height: 90%;
 }
 
@@ -104,8 +105,8 @@
 }
 
 .category-image {
-  height: 98%;
-  width: 80%;
+  height: 100px;
+  width: 100px;
   margin: 2px;
 }
 
@@ -116,12 +117,13 @@
 .Category-right {
   color: #000;
 }
+
 .add-category,
 .show-add-transaction {
- background-color: #60b524;
- margin-bottom: 0;
- text-align: center;
- padding: 20px 10px;
+  background-color: #60b524;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 20px 10px;
 }
 
 .add-category a,
@@ -131,8 +133,8 @@
 }
 
 .nav-link a {
- text-decoration: none;
- color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 .show-gift {
@@ -140,9 +142,9 @@
 }
 
 .gift-content {
- display: flex;
- margin: 1rem;
- justify-content: space-around;
+  display: flex;
+  margin: 1rem;
+  justify-content: space-around;
 }
 
 .show-item {
@@ -161,6 +163,6 @@
 }
 
 .submit-btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
