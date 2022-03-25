@@ -23,13 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_003055) do
     t.index ["author_id"], name: "index_activities_on_author_id"
   end
 
-  create_table "activities_categories", id: false, force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "activity_id", null: false
-    t.index ["activity_id", "category_id"], name: "index_activities_categories_on_activity_id_and_category_id"
-    t.index ["category_id", "activity_id"], name: "index_activities_categories_on_category_id_and_activity_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "icon"
