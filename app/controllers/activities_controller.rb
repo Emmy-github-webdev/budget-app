@@ -7,21 +7,17 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    @activity = Activity.new
+    @add_activity = Activity.new
   end
 
   def create
-    @activity = Activity.new(
-      user_id: current_user.id,
-      name: activity_params[:name],
-      amount: activity_params[:amount],
-      category_ids: activity_params[:category_ids]
-    )
+    @add_activity = Activity.new(activity_params)
+    add_activity.author = current_user
 
-    flash[:notice] = if @activity.save
-      'Category created successfully'
+    if @activity.save
+    flash[:notice] = 'Transaction created successfully'
     else
-      'Try again, Something went wrong'
+      flash[:alert] = 'Try again, Something went wrong'
     end
     redirect_to categories_path
   end
@@ -33,6 +29,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :amount, category_ids: [])
+    params.require(:activity).permit(:name, :amount, category_id: [])
   end
 end

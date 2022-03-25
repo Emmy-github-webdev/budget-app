@@ -4,10 +4,10 @@
       <%= form.text_field :name, class: 'category-input',  placeholder: "Name"%>
     </div>
     <div class="field">
-      <%= form.text_field :amout, class: 'category-input',  placeholder: "Amount"%>
+      <%= form.text_field :amount, class: 'category-input',  placeholder: "Amount"%>
     </div>
     <div class="field">
-      <%= form.collection_select :category_ids, current_user.categories.order(:name), :id, :name, {}, class: 'category-input' %>
+      <%= form.collection_select :category_id, current_user.categories.order(:name), :id, :name, {}, class: 'category-input' %>
     </div>
     <div class="submit-btn">
       <%= form.submit 'Add New Transaction', class: "submit-btn btn" %>
