@@ -1,0 +1,9 @@
+<div>
+  <% @activities.each do |activity|%>
+    <div>
+      <h3><%= activity.name%></h3>
+      <small><%= activity.created_at.strftime("%d %b %Y") %></small>
+      <em>$<%= activity.amount %></em>
+    </div>
+  <% end %>
+</div>
