@@ -5,7 +5,7 @@ RSpec.describe Activity, type: :model do
     Activity.new(
       name: 'Apple',
       amount: 10,
-      user_id: 1
+      author_id: 1
     )
   end
 
@@ -29,5 +29,4 @@ RSpec.describe Activity, type: :model do
     subject.amount = nil
     expect(subject).to_not be_valid
   end
-
 end

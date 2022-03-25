@@ -5,7 +5,7 @@ RSpec.feature 'Transaction page', type: :feature do
 
   background do
     @category = FactoryBot.create(:category, user: @user)
-    FactoryBot.build_list(:activity, 1, user_id: @user, category_ids: [@category.id])
+    FactoryBot.build_list(:activity, 1, author: @user, category_ids: [@category.id])
   end
 
   scenario 'The user can see a list of transactions' do

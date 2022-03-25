@@ -29,5 +29,4 @@ RSpec.describe Category, type: :model do
     subject.icon = nil
     expect(subject).to_not be_valid
   end
-
 end

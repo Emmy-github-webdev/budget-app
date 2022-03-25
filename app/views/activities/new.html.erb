@@ -8,8 +8,21 @@
   </div>
 </header>
  <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-<div class="new-category-page">
-  <%= render "form", activity: @activity %>
-  <br>
+ <p class="alert"><%= alert %></p>
+<div>
+<%= form_with(model: @activity) do | form | %>
+  <div class="field">
+      <%= form.text_field :name, class: 'category-input',  placeholder: "Name" %>
+    </div>
+    <div class="field">
+      <%= form.text_field :amount, class: 'category-input',  placeholder: "Amount" %>
+    </div>
+    <div class="field">
+      <%= form.collection_select :category_ids, current_user.categories.order(:name), :id, :name, {}, {class: 'category-input', multiple: true } %>
+    </div>
+    <div class="submit-btn">
+      <%= form.submit 'Add New Transaction', class: "submit-btn btn" %>
+    </div>
+<% end %>
 </div>
+

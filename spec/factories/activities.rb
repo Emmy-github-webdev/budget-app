@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :activity do
-    user_id {} # This references user
+    author {} # This references user
     sequence(:name) { |n| "Activity #{n}" }
     amount { 20 }
 
