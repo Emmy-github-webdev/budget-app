@@ -76,3 +76,4 @@ end
 gem 'cancancan'
 gem 'capybara'
 gem 'rails-controller-testing'
+gem 'validate_url'
