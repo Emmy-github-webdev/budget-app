@@ -1,0 +1,40 @@
+<header class="navigation">
+  <div class="nav-link">
+  </div>
+  <h1>SIGN UP</h1>
+  <div class="logout">
+     
+  </div>
+</header>
+
+<div class="user-signup">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name', autofocus: true, autocomplete: "name", class: 'category-input' %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email,  placeholder: 'Email', class: 'category-input' %>
+  </div>
+
+  <div class="field">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password",  placeholder: 'Password', class: 'category-input'  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: 'Confirm Password', class: 'category-input' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "submit-btn" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
