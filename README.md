@@ -3,10 +3,10 @@
 
 # Budget App 
 
-> [Live Demo](https://tranquil-mountain-74652.herokuapp.com/)
-> [Video](https://www.loom.com/share/ec9c14190deb4cbda67f367956cc882b)
+- [Live Demo](https://tranquil-mountain-74652.herokuapp.com/)
+- [Video](https://www.loom.com/share/ec9c14190deb4cbda67f367956cc882b)
 
-> In this project we have build a Recipe App using Ruby on Rails.
+> In this project I have build a Budget App using Ruby on Rails.
 
 ## Built With
 
