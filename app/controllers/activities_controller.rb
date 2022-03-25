@@ -1,6 +1,5 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource
 
   def index
     @activities = Activity.all.where(user_id: current_user.id)
